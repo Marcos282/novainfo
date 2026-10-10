@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+
+{% block title %}Nova Info | Wi‑Fi inteligente{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+  <div class="container">
+    <div class="row align-items-center gy-5">
+      <div class="col-lg-6">
+        <span class="eyebrow">SaaS para Wi‑Fi comercial</span>
+        <h1>Transforme seu Wi‑Fi em uma oportunidade de negócio.</h1>
+        <p class="hero-copy">
+          Ofereça internet aos seus clientes, venda acessos por tempo, divulgue seus produtos e acompanhe tudo em tempo real.
+        </p>
+        <div class="hero-actions d-flex flex-wrap gap-3">
+          <a href="{% url 'core:login' %}" class="btn btn-primary btn-lg rounded-pill px-4">Começar agora</a>
+          <a href="#como-funciona" class="btn btn-outline-light btn-lg rounded-pill px-4">Conhecer a plataforma</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="dashboard-showcase">
+          <div class="mini-toolbar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="showcase-grid">
+            <div class="showcase-card accent">
+              <small>Clientes online</small>
+              <strong>18</strong>
+            </div>
+            <div class="showcase-card">
+              <small>Receita do dia</small>
+              <strong>R$ 210</strong>
+            </div>
+            <div class="showcase-card wide">
+              <small>Acessos por horário</small>
+              <div class="bars">
+                <span style="height: 36%"></span>
+                <span style="height: 52%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 76%"></span>
+                <span style="height: 62%"></span>
+                <span style="height: 82%"></span>
+              </div>
+            </div>
+            <div class="showcase-card">
+              <small>Campanhas</small>
+              <strong>4 ativas</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="section-block">
+  <div class="container">
+    <div class="section-heading text-center">
+      <span class="eyebrow dark">Como funciona</span>
+      <h2>Conecte, monetize e mantenha a operação sob controle.</h2>
+    </div>
+    <div class="row gy-4 mt-3">
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card">
+          <div class="feature-icon">01</div>
+          <h3>Conecte seu MikroTik</h3>
+          <p>Integre o roteador à plataforma Nova Info com comunicação segura e monitoramento em tempo real.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card">
+          <div class="feature-icon">02</div>
+          <h3>Configure seus planos</h3>
+          <p>Crie tempos, preços e limites de dados para diferentes perfis de clientes e eventos.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card">
+          <div class="feature-icon">03</div>
+          <h3>Divulgue seu negócio</h3>
+          <p>Exiba promoções, campanhas e ofertas diretamente no portal de autenticação do Wi‑Fi.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="feature-card">
+          <div class="feature-icon">04</div>
+          <h3>Acompanhe resultados</h3>
+          <p>Monitore clientes conectados, faturamento, tráfego e performance das campanhas em um painel claro.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="para-quem" class="section-block section-soft">
+  <div class="container">
+    <div class="section-heading text-center">
+      <span class="eyebrow dark">Para quem é a Nova Info?</span>
+      <h2>Soluções pensadas para qualquer ambiente com Wi‑Fi comercial.</h2>
+    </div>
+    <div class="row gy-4 mt-3">
+      <div class="col-md-6 col-xl-4">
+        <div class="industry-card">
+          <div class="industry-icon">🏨</div>
+          <h3>Hotéis e pousadas</h3>
+          <p>Ofereça acesso premium para hóspedes e campanhas promocionais de serviços e reservas.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="industry-card">
+          <div class="industry-icon">🍽️</div>
+          <h3>Restaurantes e lanchonetes</h3>
+          <p>Conecte clientes, venda acessos por tempo e destaque pratos, combos e promoções.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="industry-card">
+          <div class="industry-icon">🏋️</div>
+          <h3>Academias</h3>
+          <p>Controle acesso, divulgue treinos e eventos e transforme a rede em mais uma fonte de receita.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="industry-card">
+          <div class="industry-icon">🛍️</div>
+          <h3>Lojas e centros comerciais</h3>
+          <p>Crie campanhas de incentivo, fidelização e aumento de permanência no ponto de venda.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="industry-card">
+          <div class="industry-icon">🏕️</div>
+          <h3>Campings e lazer</h3>
+          <p>Gerencie acesso com credenciais simples e ofereça uma experiência conectada aos visitantes.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="industry-card">
+          <div class="industry-icon">🏢</div>
+          <h3>Eventos e espaços corporativos</h3>
+          <p>Use o portal para vender planos, informar locais e apresentar promoções em tempo real.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dashboard" class="section-block">
+  <div class="container">
+    <div class="section-heading text-center">
+      <span class="eyebrow dark">Demonstração do painel</span>
+      <h2>Indicadores e relatórios para atuar com precisão.</h2>
+    </div>
+    <div class="dashboard-panel mt-4">
+      <div class="row g-3">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-box">
+            <small>Clientes online</small>
+            <strong>18</strong>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-box">
+            <small>Receita do dia</small>
+            <strong>R$ 210</strong>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-box">
+            <small>Acessos vendidos</small>
+            <strong>42</strong>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-box">
+            <small>Tempo médio</small>
+            <strong>76 min</strong>
+          </div>
+        </div>
+      </div>
+      <div class="chart-panel mt-4">
+        <canvas id="demoChart" height="110"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="planos" class="section-block section-soft">
+  <div class="container">
+    <div class="section-heading text-center">
+      <span class="eyebrow dark">Planos da Nova Info</span>
+      <h2>Uma estrutura comercial escalável para cada tipo de operação.</h2>
+    </div>
+    <div class="row gy-4 mt-3">
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <span class="pricing-tier">Inicial</span>
+          <h3>Para pequenos negócios</h3>
+          <p class="price">A partir de R$ X/mês</p>
+          <ul>
+            <li>Portal Wi‑Fi personalizado</li>
+            <li>Controle de usuários</li>
+            <li>Venda de internet</li>
+            <li>Relatórios básicos</li>
+          </ul>
+          <a href="{% url 'core:login' %}" class="btn btn-outline-primary rounded-pill">Solicitar</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pricing-card highlighted">
+          <span class="pricing-tier">Profissional</span>
+          <h3>Para operação ativa</h3>
+          <p class="price">A partir de R$ X/mês</p>
+          <ul>
+            <li>Portal Wi‑Fi personalizado</li>
+            <li>Controle de usuários</li>
+            <li>Venda de internet</li>
+            <li>Publicidade avançada</li>
+            <li>Relatórios completos</li>
+          </ul>
+          <a href="{% url 'core:login' %}" class="btn btn-primary rounded-pill">Solicitar</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="pricing-card">
+          <span class="pricing-tier">Empresarial</span>
+          <h3>Para cadeias e múltiplas unidades</h3>
+          <p class="price">A partir de R$ X/mês</p>
+          <ul>
+            <li>Portal Wi‑Fi personalizado</li>
+            <li>Controle de usuários</li>
+            <li>Venda de internet</li>
+            <li>Publicidade avançada</li>
+            <li>Integração via API</li>
+            <li>Múltiplos MikroTik</li>
+          </ul>
+          <a href="{% url 'core:login' %}" class="btn btn-outline-primary rounded-pill">Solicitar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('demoChart');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['08h', '10h', '12h', '14h', '16h', '18h', '20h'],
+        datasets: [{
+          label: 'Acessos por horário',
+          borderColor: '#00D4FF',
+          backgroundColor: 'rgba(0, 212, 255, 0.12)',
+          borderWidth: 3,
+          data: [18, 26, 44, 58, 42, 68, 54],
+          tension: 0.35,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false } },
+          y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.08)' } }
+        }
+      }
+    });
+  }
+</script>
+{% endblock %}

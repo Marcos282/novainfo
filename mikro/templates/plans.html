@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Planos de internet | Nova Info{% endblock %}
+
+{% block content %}
+<section class="panel-shell">
+  <div class="container py-5">
+    <div class="panel-header mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <span class="eyebrow dark">Planos de internet</span>
+        <h1 class="page-title">Vendas e autenticação Wi‑Fi</h1>
+      </div>
+      <a href="{% url 'core:dashboard' %}" class="btn btn-primary rounded-pill">Voltar ao painel</a>
+    </div>
+
+    <div class="row g-4">
+      {% for plan in plans %}
+      <div class="col-md-6 col-xl-4">
+        <div class="pricing-card highlighted">
+          <span class="pricing-tier">{{ plan.name }}</span>
+          <h3>{{ plan.duration_minutes }} minutos</h3>
+          <p class="price">R$ {{ plan.price }}</p>
+          <ul>
+            <li>Velocidade: {{ plan.speed_limit_mbps }} Mbps</li>
+            <li>Limite de dados: {{ plan.data_limit_mb|default:'Sem limite' }} MB</li>
+            <li>{{ plan.description|default:'Plano configurado pelo administrador do estabelecimento.' }}</li>
+          </ul>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12">
+        <div class="panel-box">
+          <p class="mb-0">Ainda não há planos cadastrados.</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

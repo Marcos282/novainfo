@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% block title %}Painel Nova Info{% endblock %}
+
+{% block content %}
+<section class="panel-shell">
+  <div class="container py-5">
+    <div class="panel-header mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <span class="eyebrow dark">Dashboard</span>
+        <h1 class="page-title">Visão geral do estabelecimento</h1>
+      </div>
+      <div class="badge-pill">{{ tenant.name|default:'Plataforma Nova Info' }}</div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>Clientes online</span>
+          <strong>{{ stats.customers_online }}</strong>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>Clientes cadastrados</span>
+          <strong>{{ stats.customers_registered }}</strong>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>Receita do dia</span>
+          <strong>R$ {{ stats.revenue_today }}</strong>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>Receita mensal</span>
+          <strong>R$ {{ stats.monthly_revenue }}</strong>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>Acessos vendidos</span>
+          <strong>{{ stats.accesses_sold }}</strong>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>Consumo de dados</span>
+          <strong>{{ stats.data_consumption }} MB</strong>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>Tempo médio</span>
+          <strong>{{ stats.avg_session_minutes }} min</strong>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-3">
+        <div class="metric-card">
+          <span>MikroTik online</span>
+          <strong>{{ stats.routers_online }}</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-1">
+      <div class="col-xl-8">
+        <div class="panel-box">
+          <div class="panel-box-header">
+            <h3>Clientes recentes</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="table panel-table">
+              <thead>
+                <tr>
+                  <th>Cliente</th>
+                  <th>Telefone</th>
+                  <th>Último acesso</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for customer in customers %}
+                <tr>
+                  <td>{{ customer.name }}</td>
+                  <td>{{ customer.phone|default:'Não informado' }}</td>
+                  <td>{{ customer.last_seen_at|default:'Nunca acessou' }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                  <td colspan="3">Nenhum cliente cadastrado neste estabelecimento.</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="panel-box">
+          <div class="panel-box-header">
+            <h3>Atalhos</h3>
+          </div>
+          <div class="stacked-links">
+            <a href="{% url 'core:clients' %}">Clientes</a>
+            <a href="{% url 'core:plans' %}">Planos de internet</a>
+            <a href="{% url 'core:advertising' %}">Publicidade</a>
+            <a href="{% url 'core:mikrotik' %}">MikroTik</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

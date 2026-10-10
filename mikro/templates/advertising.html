@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Publicidade | Nova Info{% endblock %}
+
+{% block content %}
+<section class="panel-shell">
+  <div class="container py-5">
+    <div class="panel-header mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <span class="eyebrow dark">Publicidade</span>
+        <h1 class="page-title">Campanhas e promoções</h1>
+      </div>
+      <a href="{% url 'core:dashboard' %}" class="btn btn-primary rounded-pill">Voltar ao painel</a>
+    </div>
+
+    <div class="row g-4">
+      {% for ad in ads %}
+      <div class="col-md-6 col-xl-4">
+        <div class="panel-box campaign-card">
+          <h3>{{ ad.title }}</h3>
+          <p>{{ ad.description|default:'Promoção ativa no portal de acesso Wi‑Fi.' }}</p>
+          <div class="d-flex justify-content-between text-muted small mb-2">
+            <span>Status</span>
+            <span>{{ ad.is_active|yesno:'Ativa,Inativa' }}</span>
+          </div>
+          <a href="{{ ad.link|default:'#' }}" class="btn btn-outline-primary rounded-pill w-100">Ver campanha</a>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12">
+        <div class="panel-box">
+          <p class="mb-0">Ainda não existem campanhas de publicidade cadastradas.</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

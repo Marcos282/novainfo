@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Clientes | Nova Info{% endblock %}
+
+{% block content %}
+<section class="panel-shell">
+  <div class="container py-5">
+    <div class="panel-header mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <span class="eyebrow dark">Clientes</span>
+        <h1 class="page-title">Cadastro e gestão</h1>
+      </div>
+      <a href="{% url 'core:dashboard' %}" class="btn btn-primary rounded-pill">Voltar ao painel</a>
+    </div>
+
+    <div class="panel-box">
+      <table class="table panel-table">
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>Identificador</th>
+            <th>Telefone</th>
+            <th>Último acesso</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for customer in customers %}
+          <tr>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.identifier }}</td>
+            <td>{{ customer.phone|default:'Não informado' }}</td>
+            <td>{{ customer.last_seen_at|default:'Nunca acessou' }}</td>
+            <td>{{ customer.is_blocked|yesno:'Bloqueado,Ativo' }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5">Nenhum cliente cadastrado.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

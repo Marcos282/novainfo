@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}MikroTik | Nova Info{% endblock %}
+
+{% block content %}
+<section class="panel-shell">
+  <div class="container py-5">
+    <div class="panel-header mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <span class="eyebrow dark">MikroTik</span>
+        <h1 class="page-title">Roteadores e conectividade</h1>
+      </div>
+      <a href="{% url 'core:dashboard' %}" class="btn btn-primary rounded-pill">Voltar ao painel</a>
+    </div>
+
+    <div class="row g-4">
+      {% for router in routers %}
+      <div class="col-md-6 col-xl-4">
+        <div class="panel-box router-card">
+          <div class="d-flex justify-content-between">
+            <h3>{{ router.name }}</h3>
+            <span class="status-pill {% if router.is_online %}online{% else %}offline{% endif %}">
+              {% if router.is_online %}Online{% else %}Offline{% endif %}
+            </span>
+          </div>
+          <ul class="router-meta">
+            <li><strong>IP:</strong> {{ router.ip_address }}</li>
+            <li><strong>Modelo:</strong> {{ router.model }}</li>
+            <li><strong>RouterOS:</strong> {{ router.routeros_version }}</li>
+            <li><strong>Última comunicação:</strong> {{ router.last_seen_at|default:'Não registrada' }}</li>
+          </ul>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12">
+        <div class="panel-box">
+          <p class="mb-0">Nenhum roteador cadastrado.</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
