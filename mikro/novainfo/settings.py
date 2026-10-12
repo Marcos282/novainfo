@@ -6,7 +6,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-*#4@%xyo%e&kja1@o4!@c3blx45oj@4xpbf^an*#zii6n@u)5y')
 DEBUG = os.environ.get('DEBUG', '1') == '1'
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.environ.get(
+        'ALLOWED_HOSTS',
+        'novainfo.com.br,.novainfo.com.br,localhost,127.0.0.1'
+    ).split(',')
+    if host.strip()
+]
+
+
+ALLOWED_HOSTS = [
+    'novainfo.com.br',
+    '.novainfo.com.br',
+    'localhost',
+    '127.0.0.1',
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -87,3 +102,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_REDIRECT_URL = '/painel/'
 LOGOUT_REDIRECT_URL = '/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
